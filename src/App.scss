@@ -5,6 +5,16 @@
   height: 100vh;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(242, 242, 242);
+}
+
+h1,
+h2 {
+  padding: 10px;
+}
+
 form {
   display: flex;
   gap: 1ch;
@@ -36,7 +46,7 @@ article {
 
   li {
     display: flex;
-    flex-flow:column;
+    flex-flow: column;
     gap: 1ch;
 
     figure {
@@ -44,4 +54,57 @@ article {
       height: 0;
     }
   }
+}
+
+.navbar {
+  align-items: center;
+  height: 75px;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px black;
+}
+
+.navbar-link {
+  color: white;
+  background-color: rgb(233, 142, 31);
+  letter-spacing: 0.1em;
+  margin: 0 8px;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 25px;
+  border: solid 2px black;
+  // text-transform: uppercase;
+}
+
+.detailsbutton {
+  background-color: rgb(233, 142, 31);
+  color: white;
+  padding: 5px;
+  letter-spacing: 0.1em;
+  border-radius: 25px;
+}
+
+.rosterbutton {
+  background-color: rgb(233, 142, 31);
+  color: white;
+  padding: 5px;
+  letter-spacing: 0.1em;
+  // border-radius: 25px;
+  border: 2px solid black;
+}
+.removebutton {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  letter-spacing: 0.1em;
+  // border-radius: 25px;
+  border: 2px solid black;
+}
+
+.puppyform {
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 25px;
 }

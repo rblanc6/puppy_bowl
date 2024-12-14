@@ -20,10 +20,10 @@ const puppyApi = api.injectEndpoints({
       query: () => ({ url: "/players", method: "GET" }),
       providesTags: ["Puppy"],
     }),
-    getPuppy: build.query({
-      query: (id) => ({ url: `players/${id}`, method: "GET" }),
-      providesTags: ["Puppy"],
-    }),
+    // getPuppy: build.query({
+    //   query: (id) => ({ url: `players/${id}`, method: "GET" }),
+    //   providesTags: ["Puppy"],
+    // }),
     // addPuppy: build.mutation({
     //   query: ({ id, name, breed }) => ({
     //     url: `/players/${id}`,
@@ -32,24 +32,24 @@ const puppyApi = api.injectEndpoints({
     //   }),
     //   invalidatesTags: ["Puppy"],
     // }),
-    addPuppy: build.mutation({
-      query: (puppy) => ({
-        url: "players",
-        method: "POST",
-        body: puppy,
-      }),
-      invalidatesTags: ["Puppy"],
-    }),
-    deletePuppy: build.mutation({
-      query: (id) => ({ url: `/players/${id}`, method: "DELETE" }),
-      invalidatesTags: ["Puppy"],
-    }),
+//     addPuppy: build.mutation({
+//       query: (puppy) => ({
+//         url: "players",
+//         method: "POST",
+//         body: puppy,
+//       }),
+//       invalidatesTags: ["Puppy"],
+//     }),
+//     deletePuppy: build.mutation({
+//       query: (id) => ({ url: `/players/${id}`, method: "DELETE" }),
+//       invalidatesTags: ["Puppy"],
+//     }),
   }),
 });
 
 export const {
   useGetPuppiesQuery,
-  useGetPuppyQuery,
-  useAddPuppyMutation,
-  useDeletePuppyMutation,
+//   useGetPuppyQuery,
+//   useAddPuppyMutation,
+//   useDeletePuppyMutation,
 } = puppyApi;

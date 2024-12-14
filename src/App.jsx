@@ -3,11 +3,13 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import store from "./store/store";
 
-import PuppyDetails from "./features/puppies/PuppyDetails";
-import PuppyList from "./features/puppies/PuppyList";
-import PuppyForm from "./features/puppies/PuppyForm";
+import PuppyDetails from "./components/PuppyDetails/PuppyDetails";
+import PuppyList from "./components/PuppyList/PuppyList";
+import PuppyForm from "./components/PuppyForm/PuppyForm";
+import NavBar from "./components/NavBar";
 
 import "./App.scss";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 /**
  * @component
@@ -20,15 +22,35 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <h1>Puppy Bowl</h1>
-      <PuppyForm />
+      <BrowserRouter>
+        <NavBar />
+        <h1>Puppy Bowl</h1>
+        <Routes>
+          <Route path="/players" element={<PuppyForm />} />
+          <Route
+            path="/"
+            element={<PuppyList setSelectedPuppyId={setSelectedPuppyId} />}
+          />
+          <Route
+            path="/players/:id"
+            element={
+              <PuppyDetails
+              // selectedPuppyId={selectedPuppyId}
+              // setSelectedPuppyId={setSelectedPuppyId}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <PuppyForm />
       <main>
         <PuppyList setSelectedPuppyId={setSelectedPuppyId} />
         <PuppyDetails
           selectedPuppyId={selectedPuppyId}
           setSelectedPuppyId={setSelectedPuppyId}
         />
-      </main>
+      </main> */}
     </Provider>
   );
 }
