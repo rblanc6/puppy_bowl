@@ -20,9 +20,9 @@ export default function PuppyList({ setSelectedPuppyId }) {
   const [puppyFilter2, setPuppyFilter2] = useState({
     puppyName: "",
   });
-  // const filterPuppies = (e) => {
-  //   e.preventDefault();
-  // };
+  const filterPuppies = (e) => {
+    e.preventDefault();
+  };
 
   // useEffect(() => {
   //   console.log(puppyFilter);
@@ -37,12 +37,12 @@ export default function PuppyList({ setSelectedPuppyId }) {
   //     setPuppyArray(filteredPuppies);
   //   }
   // }, [puppyFilter]);
-  // useEffect(() => {
-  //   if (listOfPuppies?.data?.players) {
-  //     setPuppyArray(listOfPuppies.data.players);
-  //   }
-  // }, [listOfPuppies]);
-  
+  useEffect(() => {
+    if (listOfPuppies?.data?.players) {
+      setPuppyArray(listOfPuppies.data.players);
+    }
+  }, [listOfPuppies]);
+
   // const [selectedPuppyId, setSelectedPuppyId] = useState(null);
   const update = (e) => {
     setPuppyFilter2({
@@ -66,7 +66,7 @@ export default function PuppyList({ setSelectedPuppyId }) {
       <form>
         <label>
           Name:{" "}
-{/*           <input
+          {/*           <input
             className="puppyform"
             name="puppyName"
             value={puppyFilter}
